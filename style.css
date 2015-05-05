@@ -382,11 +382,20 @@ textarea:focus {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	background-color: #27b4b2;
-	border: none;
+input[type="submit"],
+#menu-item-82 > a {
+	background-color: #27B4B2; background-image: -webkit-gradient(linear, left top, left bottom, from(#27B4B2), to(#0C8684));
+	background-image: -webkit-linear-gradient(top, #27B4B2, #0C8684);
+	background-image: -moz-linear-gradient(top, #27B4B2, #0C8684);
+	background-image: -ms-linear-gradient(top, #27B4B2, #0C8684);
+	background-image: -o-linear-gradient(top, #27B4B2, #0C8684);
+	background-image: linear-gradient(to bottom, #27B4B2, #0C8684);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#27B4B2, endColorstr=#0C8684);
+	border:1px solid #1D8684;
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 	box-shadow: none;
-	color: #fff;
+	color: #FEFEFE;
 	cursor: pointer;
 	display: block;
 	font-size: 16px;
@@ -398,14 +407,30 @@ input[type="submit"] {
 	text-decoration: none;
 }
 
+#menu-item-82 > a {
+	font-size: inherit;
+	font-size: inherit;
+	padding: 12px 42px;
+	padding: 1.2rem 4.2rem;
+}
+
+
+
 .button:hover,
 .widget .button:hover,
 button:hover,
 input:hover[type="button"],
 input:hover[type="reset"],
-input:hover[type="submit"] {
-	background-color: #333;
-	color: #fff;
+input:hover[type="submit"],
+#menu-item-82 > a:hover  {
+	border:1px solid #0E9997;
+	color: #fefefe;
+	background-color: #35F2F0; background-image: -webkit-gradient(linear, left top, left bottom, from(#35F2F0), to(#0E9997));
+	background-image: -webkit-linear-gradient(top, #35F2F0, #0E9997);
+	background-image: -moz-linear-gradient(top, #35F2F0, #0E9997);
+	background-image: -ms-linear-gradient(top, #35F2F0, #0E9997);
+	background-image: -o-linear-gradient(top, #35F2F0, #0E9997);
+	background-image: linear-gradient(to bottom, #35F2F0, #0E9997);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#35F2F0, endColorstr=#0E9997);
 }
 
 .entry-content .button:hover {
