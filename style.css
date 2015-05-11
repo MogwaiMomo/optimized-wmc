@@ -213,8 +213,18 @@ p {
 	margin: 0 0 24px;
 	margin: 0 0 2.4rem;
 	padding: 0;
+	font-weight: 300;
 }
 
+/* MP: adjusted for hero specific typographic balance */
+#hero-subhead {
+	font-size: 2rem;
+  	line-height: 1.4;
+}
+
+#vid-click-trigger {
+	text-align: center;
+}
 strong {
 	font-weight: 700;
 }
@@ -1249,6 +1259,18 @@ Content Area
 	padding: 6rem 0 3.6rem;
 }
 
+/* MP: remove padding-bottom of #about to raise content above fold */
+
+#about {
+	padding: 60px 0 0px;
+	padding: 6rem 0 0rem;
+}
+
+#services {
+	padding: 60px 0 36px;
+	padding: 6rem 0 3.6rem;
+}
+
 #about .entry-meta a:hover,
 #about .entry-title a,
 #about a:hover,
@@ -1306,6 +1328,14 @@ Content Area
     clear: both;
 }
 
+
+/* MP: Remove margin-bottom of feature-page-2 (hero section) to
+raise content above fold */
+
+#featured-page-2 {
+	margin-bottom: 0px;
+  	margin-bottom: 0rem;
+}
 
 /* Entries
 --------------------------------------------- */
@@ -2213,3 +2243,13 @@ hr.light {
   top: 0px;
   left: 0px;
 }
+
+/* MP additions -------------------------------- */
+
+
+/* make video embeds responsive: */ 
+
+/* http://www.wpstuffs.com/youtube-videos-responsive-wordpress/ */
+
+
+

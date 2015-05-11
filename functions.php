@@ -160,7 +160,9 @@ genesis_register_sidebar( array(
 // [signup_button text="foo bar"]
 function signup_button_fn( $atts ) {
   extract( shortcode_atts( array(
-    'text' => 'Get All The Episodes For $14/mo',
+
+  	// MP: changed text attr for optimized version:
+    'text' => '￼Get FULL Access to <br>75+ Game-Changing JS Screencasts',
     'url' => 'https://sub.watchmecode.net/signup',
     'icon' => ""
   ), $atts ) );
