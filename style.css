@@ -235,17 +235,21 @@ ul {
 	padding: 0;
 }
 
-blockquote,
+blockquote {
+	text-align:center;
+	font-size: 2rem;
+
+}
 blockquote::before {
 	color: #999;
 }
-
+/*
 blockquote {
 	margin: 40px 40px 24px;
 	margin: 4rem 4rem 2.4rem;
-}
+}*/
 
-blockquote::before {
+/*blockquote::before {
 	content: "\201C";
 	display: block;
 	font-size: 30px;
@@ -254,7 +258,7 @@ blockquote::before {
 	left: -20px;
 	position: relative;
 	top: -10px;
-}
+}*/
 
 .entry-content code {
 	background-color: #333;
@@ -264,6 +268,10 @@ blockquote::before {
 cite {
 	font-style: normal;
 }
+
+
+
+
 
 /* Headings
 --------------------------------------------- */
@@ -336,14 +344,17 @@ img {
 }
 
 #blog img,
-#portfolio img {
+#main-testi img,
+#benefits img,
+#portfolio img,
+#skills img {
 	margin-bottom: 16px;
 	margin-bottom: 1.6rem;
 	opacity: 0.8;
 }
 
 #blog img:hover,
-#portfolio img:hover {
+#main-testi img:hover {
 	opacity: 1;
 }
 
@@ -458,13 +469,7 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
-#services a.button {
-	line-height: 1;
-	margin-top: -40px;
-	margin-top: -4rem;
-	padding: 20px 24px;
-	padding: 2rem 2.4rem;
-}
+
 
 .mpp-landing a.button {
 	margin-top: 16px;
@@ -823,6 +828,9 @@ Widgets
 	padding: 0;
 }
 
+.ctr-content {
+	text-align: center;
+}
 
 /* Featured Content
 --------------------------------------------- */
@@ -879,8 +887,7 @@ Plugins
 	width: 100%;
 }
 
-.enews-widget input:hover[type="submit"],
-#services a.button:hover {
+.enews-widget input:hover[type="submit"]{
 	background-color: #fff;
 	color: #222;
 }
@@ -1242,15 +1249,22 @@ Content Area
 --------------------------------------------- */
 
 #about,
+#control-about,
 #blog,
+#main-testi,
 #portfolio,
-#services {
+#services,
+#benefits,
+#skills,
+#derick {
 	clear: both;
 	overflow: hidden;
 }
 
 #about,
-#services {
+#control-about,
+#services,
+#derick {
 	background-color: #222;
 	color: #fff;
 	font-size: 20px;
@@ -1261,12 +1275,17 @@ Content Area
 
 /* MP: remove padding-bottom of #about to raise content above fold */
 
-#about {
+#about,
+#control-about,
+#services,
+#derick {
 	padding: 60px 0 0px;
 	padding: 6rem 0 0rem;
 }
 
-#services {
+#benefits,
+#portfolio,
+#skills {
 	padding: 60px 0 36px;
 	padding: 6rem 0 3.6rem;
 }
@@ -1274,20 +1293,33 @@ Content Area
 #about .entry-meta a:hover,
 #about .entry-title a,
 #about a:hover,
+#control-about .entry-meta a:hover,
+#control-about .entry-title a,
+#control-about a:hover,
 #services .entry-meta a:hover,
 #services .entry-title a,
-#services a:hover {
+#services a:hover,
+#derick .entry-meta a:hover,
+#derick .entry-title a,
+#derick a:hover  {
 	color: #fff;
 }
 
 #about .entry-meta a,
 #about .entry-title a:hover,
+#control-about .entry-meta a,
+#control-about .entry-title a:hover,
 #services .entry-meta a,
-#services .entry-title a:hover {
+#services .entry-title a:hover,
+#derick .entry-meta a,
+#derick .entry-title a:hover  {
 	color: #ccc;
 }
 
-#portfolio {
+#main-testi,
+#benefits,
+#portfolio,
+#skills {
 	padding: 60px 0 16px;
 	padding: 6rem 0 1.6rem;
 }
@@ -1297,16 +1329,13 @@ Content Area
 	padding: 6rem 0 0;
 }
 
-.mpp-home .content .featuredpost .entry,
-#services .alignright {
+.mpp-home .content .featuredpost .entry {
 	float: left;
 	margin-right: 5.263157894737%; /* 60px / 1140px */
 	width: 29.824561403509%; /* 340px / 1140px */
 }
 
-#services .alignleft {
-	width: 64.912280701754%; /* 740px / 1140px */
-}
+
 
 .mpp-home .content .featuredpost .entry:nth-of-type(3n+3) {
 	margin-right: 0;
@@ -1317,7 +1346,10 @@ Content Area
 }
 
 #blog .widget-title,
-#portfolio .widget-title {
+#main-testi .widget-title,
+#benefits .widget-title, 
+#portfolio .widget-title, 
+#skills .widget-title {
 	margin-bottom: 24px;
 	margin-bottom: 2.4rem;
 }
@@ -1336,6 +1368,41 @@ raise content above fold */
 	margin-bottom: 0px;
   	margin-bottom: 0rem;
 }
+
+/*CSS for New Homepage Sections */
+
+/* Main-Testimonial */
+
+#main-testi {
+	background-color: #F6F6F6;
+}
+
+#main-testi h2 {
+	font-weight: 700;
+	text-align:center;
+
+}
+
+#main-testi h2 > span {
+	border-bottom: solid 3px #FF9600;
+}
+
+#main-testi * blockquote {
+	padding: 0 40px;
+	padding: 0 4.0rem;
+}
+
+
+
+.quote-src {
+	text-align:center;
+	font-size: 2rem;
+	font-weight: 400;
+	font-style: italic;
+}
+
+
+
 
 /* Entries
 --------------------------------------------- */
@@ -2075,17 +2142,7 @@ Media Queries
 		padding-top: 1.2rem;
 	}
 	
-	#services .alignright,
-	#services .alignleft {
-		float: none;
-		width: 100%;
-	}
-	
-	#services a.button {
-		float: left;
-		margin: 20px 0 0;
-		margin: 2rem 0 0;
-	}
+
 
 	.site-footer,
 	.site-header .wrap {

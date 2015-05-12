@@ -131,31 +131,76 @@ function mpp_remove_comment_form_allowed_tags( $defaults ) {
 }
 
 //* Register widget areas
+
+// MP: Widgets for Treatment Homepage
 genesis_register_sidebar( array(
 	'id'          => 'home-about',
-	'name'        => __( 'Home - About','mpp' ),
+	'name'        => __( 'Home B - About','mpp' ),
 	'description' => __( 'This is the about section of the homepage.','mpp' ),
 ) );
+
 genesis_register_sidebar( array(
-	'id'          => 'home-portfolio',
-	'name'        => __( 'Home - Portfolio','mpp' ),
-	'description' => __( 'This is the portfolio section of the homepage.','mpp' ),
+	'id'          => 'home-main-testi',
+	'name'        => __( 'Home B - Main-Testimonial','mpp' ),
+	'description' => __( 'This is a centered, full-width testimonial on the homepage.','mpp' ),
 ) );
+
 genesis_register_sidebar( array(
-	'id'          => 'home-services',
-	'name'        => __( 'Home - Services','mpp' ),
-	'description' => __( 'This is the Services section of the homepage.','mpp' ),
+	'id'          => 'home-benefits',
+	'name'        => __( 'Home B - Benefits','mpp' ),
+	'description' => __( 'This is the benefits section of the homepage.','mpp' ),
 ) );
+
 genesis_register_sidebar( array(
-	'id'          => 'home-blog',
-	'name'        => __( 'Home - Blog','mpp' ),
-	'description' => __( 'This is the Blog section of the homepage.','mpp' ),
+	'id'          => 'home-skills',
+	'name'        => __( 'Home B - Skills','mpp' ),
+	'description' => __( 'This is the Skills section of the homepage.','mpp' ),
 ) );
+
 genesis_register_sidebar( array(
-	'id'          => 'after-entry',
-	'name'        => __( 'After Entry', 'mpp' ),
-	'description' => __( 'This is the after entry widget area.', 'mpp' ),
+	'id'          => 'home-derick',
+	'name'        => __( 'Home B - Derick','mpp' ),
+	'description' => __( 'This is the About Derick Bailey section of the homepage.','mpp' ),
 ) );
+
+genesis_register_sidebar( array(
+	'id'          => 'home-final-cta',
+	'name'        => __( 'Home B - Final Call to Action','mpp' ),
+	'description' => __( 'This is the Final CTA section of the homepage.','mpp' ),
+) );
+
+
+
+// MP: Widgets for Control Homepage
+
+// genesis_register_sidebar( array(
+// 	'id'          => 'home-control-about',
+// 	'name'        => __( 'Home A - About','mpp' ),
+// 	'description' => __( 'This is the about section of the homepage.','mpp' ),
+// ) );
+
+// genesis_register_sidebar( array(
+// 	'id'          => 'home-portfolio',
+// 	'name'        => __( 'Home A - Portfolio','mpp' ),
+// 	'description' => __( 'This is the portfolio section of the homepage.','mpp' ),
+// ) );
+// genesis_register_sidebar( array(
+// 	'id'          => 'home-services',
+// 	'name'        => __( 'Home A - Services','mpp' ),
+// 	'description' => __( 'This is the Services section of the homepage.','mpp' ),
+// ) );
+// genesis_register_sidebar( array(
+// 	'id'          => 'home-blog',
+// 	'name'        => __( 'Home A - Blog','mpp' ),
+// 	'description' => __( 'This is the Blog section of the homepage.','mpp' ),
+// ) );
+
+// genesis_register_sidebar( array(
+// 	'id'          => 'after-entry',
+// 	'name'        => __( 'After Entry', 'mpp' ),
+// 	'description' => __( 'This is the after entry widget area.', 'mpp' ),
+// ) );
+
 
 // [signup_button text="foo bar"]
 function signup_button_fn( $atts ) {
