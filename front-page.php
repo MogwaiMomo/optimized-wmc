@@ -47,6 +47,10 @@ function mpp_home_genesis_meta() {
 		// Add homepage widgets
 		add_action( 'genesis_loop', 'mpp_homepage_widgets' );
 
+		// Remove Footer
+		 remove_action('genesis_footer', 'genesis_do_footer');
+		 remove_action('genesis_footer', 'genesis_footer_markup_open', 5);
+		 remove_action('genesis_footer', 'genesis_footer_markup_close', 15);
 	}
 
 }
@@ -81,12 +85,12 @@ function mpp_homepage_widgets() {
 	) );
 
 	genesis_widget_area( 'home-derick', array(
-		'before' => '<div id="skills"><div class="wrap">',
+		'before' => '<div id="derick"><div class="wrap">',
 		'after'  => '</div></div>',
 	) );
 
 	genesis_widget_area( 'home-final-cta', array(
-		'before' => '<div id="skills"><div class="wrap">',
+		'before' => '<div id="final-cta"><div class="wrap">',
 		'after'  => '</div></div>',
 	) );
 

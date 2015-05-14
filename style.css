@@ -1,10 +1,9 @@
 /*
-	Theme Name: Modern Portfolio Pro Theme
-	Theme URI: http://my.studiopress.com/themes/modern-portfolio/
-	Description: A mobile responsive and HTML5 theme built for the Genesis Framework.
-	Author: StudioPress
-	Author URI: http://www.studiopress.com/
-	Version: 2.0.0
+	Theme Name: WORKING Watch Me Code Theme
+	Description: A conversion-optimized child theme built using the Genesis Framework. Customized from the Modern Portfolio Pro child theme.
+	Author: Kantan Designs
+	Author URI: https://kantan.io
+	Version: 1.0.0
 
 	Tags: black, white, one-column, two-columns, responsive-layout, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, premise-landing-page
 
@@ -62,11 +61,11 @@
 	- Footer Widgets
 	- Site Footer
 	- Theme Colors
-		- Modern Portfolio Pro Blue
-		- Modern Portfolio Pro Green
-		- Modern Portfolio Pro Orange
-		- Modern Portfolio Pro Purple
-		- Modern Portfolio Pro Red
+		- Watch Me Code Blue
+		- Watch Me Code Green
+		- Watch Me Code Orange
+		- Watch Me Code Purple
+		- Watch Me Code Red
 	- Media Queries
 		- max-width: 1267px
 		- max-width: 1000px
@@ -165,16 +164,16 @@ body {
 	background-color: #fff;
 	color: #222;
 	font-family: 'Lato', sans-serif;
-	font-size: 18px;
-	font-size: 1.8rem;
+	font-size: 20px;
+	font-size: 2.0rem;
 	font-weight: 400;
 	line-height: 1.625;
 }
 
-body > div {
+/*body > div {
   font-size: 18px;
   font-size: 1.8rem;
-}
+}*/
 
 a,
 button,
@@ -213,8 +212,17 @@ p {
 	margin: 0 0 24px;
 	margin: 0 0 2.4rem;
 	padding: 0;
+}
+
+/* p for black backgrounds */
+
+#about * p,
+#control-about * p,
+#services * p,
+#derick * p {
 	font-weight: 300;
 }
+
 
 /* MP: adjusted for hero specific typographic balance */
 #hero-subhead {
@@ -269,6 +277,15 @@ cite {
 	font-style: normal;
 }
 
+
+#benefits li {
+	margin-bottom: 6rem;
+}
+
+
+#benefits * ul.icon {
+	list-style-type: ;
+}
 
 
 
@@ -419,10 +436,10 @@ input[type="submit"],
 	color: #FEFEFE;
 	cursor: pointer;
 	display: block;
-	font-size: 16px;
-	font-size: 1.6rem;
-	padding: 16px 24px;
-	padding: 1.6rem 2.4rem;
+	font-size: 20px;
+	font-size: 2.0rem;
+	padding: 20px 25px;
+	padding: 2.0rem 2.5rem;
 	width: auto;
 	text-align: center;
 	text-decoration: none;
@@ -812,10 +829,10 @@ Widgets
 	margin-bottom: 2.4rem;
 }
 
-.widget li {
+/*.widget li {
 	list-style-type: none;
 }
-
+*/
 .widget ol {
 	margin-left: 24px;
 	margin-left: 2.4rem;
@@ -831,6 +848,9 @@ Widgets
 .ctr-content {
 	text-align: center;
 }
+
+
+
 
 /* Featured Content
 --------------------------------------------- */
@@ -1261,34 +1281,56 @@ Content Area
 	overflow: hidden;
 }
 
+/* MP: Black-background sections */
+
 #about,
 #control-about,
 #services,
 #derick {
 	background-color: #222;
 	color: #fff;
-	font-size: 20px;
+	/*font-size: 20px;
 	font-size: 2rem;
-	padding: 60px 0 36px;
-	padding: 6rem 0 3.6rem;
+	font-weight: 400;*/
+	/*padding: 60px 0 36px;
+	padding: 6rem 0 3.6rem;*/
 }
 
 /* MP: remove padding-bottom of #about to raise content above fold */
 
 #about,
 #control-about,
-#services,
-#derick {
+#services {
 	padding: 60px 0 0px;
 	padding: 6rem 0 0rem;
 }
 
+#main-testi,
 #benefits,
 #portfolio,
-#skills {
+#final-cta {
 	padding: 60px 0 36px;
 	padding: 6rem 0 3.6rem;
 }
+
+#benefits {
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.benefit-sub {
+	width: 75%;
+	margin: 0 auto 4rem auto;
+}
+
+#benefit-list {
+  width: 70%;
+  display: block;
+  text-align: left;
+  margin: 0 auto;	
+}
+
 
 #about .entry-meta a:hover,
 #about .entry-title a,
@@ -1316,13 +1358,6 @@ Content Area
 	color: #ccc;
 }
 
-#main-testi,
-#benefits,
-#portfolio,
-#skills {
-	padding: 60px 0 16px;
-	padding: 6rem 0 1.6rem;
-}
 
 #blog {
 	padding: 60px 0 0;
@@ -1371,35 +1406,263 @@ raise content above fold */
 
 /*CSS for New Homepage Sections */
 
-/* Main-Testimonial */
+	/* Main-Testimonial */
 
-#main-testi {
-	background-color: #F6F6F6;
-}
+		#main-testi {
+			background-color: #F6F6F6;
+		}
 
-#main-testi h2 {
-	font-weight: 700;
-	text-align:center;
+		#main-testi h2 {
+			font-weight: 700;
+			text-align:center;
 
-}
+		}
 
-#main-testi h2 > span {
-	border-bottom: solid 3px #FF9600;
-}
+		#main-testi h2 > span {
+			border-bottom: solid 3px #FF9600;
+		}
 
-#main-testi * blockquote {
-	padding: 0 40px;
-	padding: 0 4.0rem;
-}
+		#main-testi * blockquote {
+			padding: 0 40px;
+			padding: 0 4.0rem;
+		}
+
+		.quote-src {
+			text-align:center;
+			font-size: 2rem;
+			font-weight: 400;
+			font-style: italic;
+		}
 
 
+	/* Benefits */
 
-.quote-src {
-	text-align:center;
-	font-size: 2rem;
-	font-weight: 400;
-	font-style: italic;
-}
+		#benefits {
+			width: 70%;
+			margin: 0 auto;
+			text-align: center;
+			position: relative;
+			z-index: 1;
+		}
+
+		.benefit-sub {
+			width: 75%;
+			margin: 0 auto 6rem auto;
+		}
+
+		#benefit-list {
+		  width: 70%;
+		  display: block;
+		  text-align: left;
+		  margin: 0 auto;	
+		}
+
+		#benefits h3 > span {
+			border-bottom: solid 3px #FF9600;
+		}
+
+		#benefit-list * h3 {
+			font-weight: 700;
+			margin-bottom: 0;
+		}
+
+		#benefit-list * span.list-p {
+			display:inline-block;
+			padding-left: 25px;
+			
+		}
+
+
+		#benefits li {
+			margin-bottom: 6rem;
+		}
+
+		#benefits * ul { 
+			padding-left: 20px; 
+			list-style: none; 
+		}
+
+
+		#benefits * ul li h3:before {    
+		    font-family: 'FontAwesome';
+		    font-size: 3rem;
+		    color: #27B4B2;
+		    content: '\f087';
+		    margin:0 15px 0 -15px;
+		}
+
+	/* Skills */
+
+		/* Skills copy container */
+
+		#skills {
+			background-color: #222;
+			position:relative;
+			z-index: 10;
+			overflow: visible;
+			margin-bottom: -1px;
+		}
+
+		#skills::before {
+			content: ' ';
+			display: block;
+			background-color: #219794;
+			width: 100%;
+			height: 100px;
+		}
+
+		.skills-box {
+			padding: 0px 0px 50px 0px;
+			padding: 0rem 0rem 5.0rem 0rem;
+			overflow:hidden;
+			width: 95%;
+  			margin: 0 auto;
+			background-color: #fefefe;
+			position:relative;
+			z-index: 100;
+			top: -130px;
+		}
+
+		.skills-list {
+			padding: 5.0rem;
+			padding: 50px;
+		}
+
+		#skills  .skills-box h1 {
+			position: relative;
+			width: 100%;
+			font-size: 1.5em;
+			font-weight: bold;
+			padding: 30px 0px 30px 0px;
+			padding: 3.0rem 0rem 3.0rem 0rem;
+			margin: 0px 0px 0px 0px;
+			color: #fefefe;
+			background-color: #27B4B2;
+			text-align: center;
+
+			text-shadow: 0px 1px 2px #bbb;
+			-webkit-box-shadow: 0px 2px 4px #888;
+			-moz-box-shadow: 0px 2px 4px #888;
+			box-shadow: 0px 2px 4px #888;
+		}
+
+
+		#skills ul {
+			display: block;
+  			width: 80%;
+
+  			margin: 0 auto;
+  			list-style-position: outside;
+		}
+
+		#skills ul li {
+			margin-bottom: 2.0rem;
+			margin-bottom: 20px;
+		}
+
+		#text-28 {
+			margin-bottom: 0px;
+			margin-bottom: 0rem;
+		}
+
+		#skills:after {
+			content: url("http://localhost:8888/watchmecode/wp-content/uploads/2015/05/right-arrow-e1431564382860.png");
+			float: right;
+			margin-top: -170px;
+			margin-right: 275px;
+			position:relative;
+			z-index: 1000;
+		}
+
+	/* About Derick */
+
+		#derick {
+			padding-bottom: 7.5rem;
+			padding-bottom: 75px;
+		}
+
+		#derick h1 {
+			text-align: center;
+		}
+
+		.derick-bio-wrapper {
+			max-width: 700px;
+			display: block;
+			margin: 50px auto;
+			margin: 5.0rem auto;
+			overflow: hidden;
+		}
+	
+
+		.derick-list ul {
+			list-style-position: inside;
+		}
+
+		.round > * {
+			  width: 130px;
+			  height: 130px;
+			  overflow: hidden;
+			  -webkit-border-radius: 50%;
+			  -moz-border-radius: 50%;
+			  border-radius: 50%;
+			  border: solid 5px #fefefe;
+		}
+
+		.minor-testimon {
+			display:block;
+			background-color: #C7C7C7;
+			color: #222;
+			overflow: hidden;
+			max-width: 1000px;
+			padding: 5.0rem;
+			padding: 50px;
+			margin: 0 auto;
+		}
+
+		#derick .testi-1 p,
+		#derick .testi-2 p {
+			font-size: 16px;
+			font-size: 1.6rem;
+			font-weight: 500;
+		}
+
+
+		#derick .testi-1 {
+			padding-right: 50px;
+			border-right: solid 2px #666;
+		}
+
+		#derick .testi-2 {
+			padding-left: 50px;
+		}
+
+		#derick .testi-source {
+			margin-bottom: 0;
+		}
+
+
+	/* Final CTA */
+
+		#final-cta {
+			background-color: #F6F6F6;
+		}
+
+		#final-cta .final-button {
+			padding-top: 30rem;
+			padding-top: 30px;
+		}
+
+		.final-click-trigger {
+			font-size: 16px;
+			margin-top: 10px;
+		}
+
+		#final-cta:after {
+			content: url("http://localhost:8888/watchmecode/wp-content/uploads/2015/05/left-arrow-e1431564618302.png");
+			float: left;
+			margin-top: -430px;
+			margin-left: 275px;
+		}
 
 
 
@@ -1795,7 +2058,7 @@ Site Footer
 Theme Colors
 ---------------------------------------------------------------------------------------------------- */
 
-/* Modern Portfolio Pro Blue
+/* Watch Me Code Blue
 --------------------------------------------- */
 
 .modern-portfolio-pro-blue .after-entry .entry-title a:hover,
@@ -1863,7 +2126,7 @@ Theme Colors
 	background-color: #333;
 }
 
-/* Modern Portfolio Pro Orange
+/* Watch Me Code Orange
 --------------------------------------------- */
 
 .modern-portfolio-pro-orange .after-entry .entry-title a:hover,
@@ -1932,7 +2195,7 @@ Theme Colors
 }
 
 
-/* Modern Portfolio Pro Purple
+/* Watch Me Code Purple
 --------------------------------------------- */
 
 .modern-portfolio-pro-purple .after-entry .entry-title a:hover,
@@ -2001,7 +2264,7 @@ Theme Colors
 }
 
 
-/* Modern Portfolio Pro Red
+/* Watch Me Code Red
 --------------------------------------------- */
 
 .modern-portfolio-pro-red .after-entry .entry-title a:hover,

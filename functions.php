@@ -17,13 +17,14 @@ add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list'
 //* Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
-//* Enqueue Lato and Merriweather Google fonts
+//* Enqueue Lato Google fonts
 add_action( 'wp_enqueue_scripts', 'mpp_google_fonts' );
 function mpp_google_fonts() {
 
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic,700italic', array(), CHILD_THEME_VERSION );
 	
 }
+
 
 //* Enqueue Responsive Menu Script
 add_action( 'wp_enqueue_scripts', 'mpp_enqueue_responsive_script' );
@@ -207,7 +208,7 @@ function signup_button_fn( $atts ) {
   extract( shortcode_atts( array(
 
   	// MP: changed text attr for optimized version:
-    'text' => '￼Get FULL Access to <br>75+ Game-Changing JS Screencasts',
+    'text' => '￼Get FULL Access to <br>75+ Game-Changing Screencasts',
     'url' => 'https://sub.watchmecode.net/signup',
     'icon' => ""
   ), $atts ) );
@@ -217,7 +218,7 @@ function signup_button_fn( $atts ) {
     $iconImage = "<i class='fa fa-lg fa-${icon}'>&nbsp;</i>"; 
   }
 
-  return "<a class='button' href='${url}'>${iconImage}{$text} &raquo;</a>"; 
+  return "<a class='button' href='${url}'>${iconImage}{$text}</a>"; 
 }
 add_shortcode( 'signup_button', 'signup_button_fn' );
 
