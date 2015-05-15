@@ -235,7 +235,7 @@ function signup_button_fn( $atts ) {
 
   	// MP: changed text attr for optimized version:
     'text' => '￼Get FULL Access to <br>75+ Game-Changing Screencasts',
-    'url' => 'https://sub.watchmecode.net/signup',
+    'url' => 'http://localhost:8888/watchmecode/pricing-plans/',
     'icon' => ""
   ), $atts ) );
 

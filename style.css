@@ -1280,7 +1280,8 @@ Content Area
 #benefits,
 #skills,
 #derick,
-#subscriptions {
+#subscriptions,
+#bundles {
 	clear: both;
 	overflow: hidden;
 }
@@ -1314,7 +1315,8 @@ Content Area
 #main-testi,
 #benefits,
 #portfolio,
-#final-cta {
+#final-cta,
+#bundles {
 	padding: 60px 0 36px;
 	padding: 6rem 0 3.6rem;
 }
@@ -1679,48 +1681,144 @@ raise content above fold */
 /*Additional CSS for Pricing Page 
 --------------------------------------------- */
 
-#subscriptions h1 {
-	text-align: center;
-}
+	#subscriptions h1,
+	#bundles {
+		text-align: center;
+	}
 
-#subscriptions .indie-plan,
-#subscriptions .team-plan {
-	background-color: #fefefe;
-	padding: 5.0rem;
-	padding: 50px;
-	margin-top: 3.6rem;
-	margin-top: 36px;
-	border-radius: 3px;
-}
+	#subscriptions .indie-plan,
+	#subscriptions .team-plan {
+		background-color: #fefefe;
+		padding: 5.0rem;
+		padding: 50px;
+		margin-top: 3.6rem;
+		margin-top: 36px;
+		border-radius: 3px;
+	}
 
-#subscriptions .indie-plan h2,
-#subscriptions .team-plan h2,
-#subscriptions .indie-plan li,
-#subscriptions .team-plan li,
-#subscriptions .indie-plan p,
-#subscriptions .team-plan p  {
-	color: #222;
-}
+	#subscriptions .indie-plan h2,
+	#subscriptions .team-plan h2,
+	#subscriptions .indie-plan li,
+	#subscriptions .team-plan li,
+	#subscriptions .indie-plan p,
+	#subscriptions .team-plan p  {
+		color: #222;
+	}
 
-#subscriptions h2 {
-	font-weight: 700;
-}
+	#subscriptions h2 {
+		font-weight: 700;
+	}
 
-#subscriptions .indie-plan .plan-fee {
-	color: #03C6C1;
-	float:right;
-	font-weight: 400;
-}
+	#subscriptions .indie-plan .plan-fee {
+		color: #03C6C1;
+		float:right;
+		font-weight: 400;
+	}
 
-#subscriptions .team-plan .plan-fee {
-	color: #FFA901;
-	float:right;
-	font-weight: 400;
-}
+	#subscriptions .team-plan .plan-fee {
+		color: #FFA901;
+		float:right;
+		font-weight: 400;
+	}
 
-#subscriptions ul {
-	list-style-position: inside;
-}
+	#subscriptions ul {
+		list-style: none;
+	}
+	#subscriptions li {
+		text-indent: -3.0rem;
+	    padding-left: 30px;
+
+	}
+
+	#subscriptions .indie-plan ul li:before {
+		font-family:'FontAwesome';
+		content: "\f00c";
+		color: #03C6C1;
+		padding-right: 1.0rem;
+		padding-right: 10px;
+	}
+
+	#subscriptions .team-plan ul li:before {
+		font-family:'FontAwesome';
+		content: "\f00c";
+		color: #FFA901;
+		padding-right: 1.0rem;
+		padding-right: 10px;
+	}
+
+	.indie-plan button,
+	.team-plan button {
+		width: 100%;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-top: 4.0rem;
+		margin-top: 40px;
+	}
+
+
+	.indie-plan button {
+		border:1px solid #0E9997;
+		color: #fefefe;
+		background-color: #35F2F0; background-image: -webkit-gradient(linear, left top, left bottom, from(#35F2F0), to(#0E9997));
+		background-image: -webkit-linear-gradient(top, #35F2F0, #0E9997);
+		background-image: -moz-linear-gradient(top, #35F2F0, #0E9997);
+		background-image: -ms-linear-gradient(top, #35F2F0, #0E9997);
+		background-image: -o-linear-gradient(top, #35F2F0, #0E9997);
+		background-image: linear-gradient(to bottom, #35F2F0, #0E9997);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#35F2F0, endColorstr=#0E9997);
+	}
+
+	.indie-plan button:active {
+		border:1px solid #0E9997;
+		color: #fefefe;
+		background-color: #27B4B2; background-image: -webkit-gradient(linear, left top, left bottom, from(#27B4B2), to(#0C8684));
+		background-image: -webkit-linear-gradient(top, #27B4B2, #0C8684);
+		background-image: -moz-linear-gradient(top, #27B4B2, #0C8684);
+		background-image: -ms-linear-gradient(top, #27B4B2, #0C8684);
+		background-image: -o-linear-gradient(top, #27B4B2, #0C8684);
+		background-image: linear-gradient(to bottom, #27B4B2, #0C8684);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#27B4B2, endColorstr=#0C8684);
+	}
+
+
+	.team-plan button {
+		border:1px solid #E88D00;
+		color: #fefefe;
+		background-color: #FECC77; background-image: -webkit-gradient(linear, left top, left bottom, from(#FECC77), to(#FD8208));
+		background-image: -webkit-linear-gradient(top, #FECC77, #FD8208);
+		background-image: -moz-linear-gradient(top, #FECC77, #FD8208);
+		background-image: -ms-linear-gradient(top, #FECC77, #FD8208);
+		background-image: -o-linear-gradient(top, #FECC77, #FD8208);
+		background-image: linear-gradient(to bottom, #FECC77, #FD8208);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FECC77, endColorstr=#FD8208);
+	}
+
+	.team-plan button:active {
+		border:1px solid #E88D00;
+		color: #fefefe;
+		background-color: #FD8208; background-image: -webkit-gradient(linear, left top, left bottom, from(#FD8208), to(#E88D00));
+		background-image: -webkit-linear-gradient(top, #FD8208, #E88D00);
+		background-image: -moz-linear-gradient(top, #FD8208, #E88D00);
+		background-image: -ms-linear-gradient(top, #FD8208, #E88D00);
+		background-image: -o-linear-gradient(top, #FD8208, #E88D00);
+		background-image: linear-gradient(to bottom, #FD8208, #E88D00);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FD8208, endColorstr=#E88D00);
+	}
+
+	#bundles {
+		background-color: #f6f6f6;
+	}
+	#bundles p > span {
+		border-bottom: solid 3px #FF9600;
+	}
+
+	#bundles .edd_download {
+	  text-align: left;
+	  background-color: #fefefe;
+	  border: solid 1px #eee;
+	  padding: 30px;
+	  margin: 7px;
+	  min-height: 400px;
+	  min-height: 40.0rem;
+	  float: left;
+	}
+
 
 
 /* Signup
