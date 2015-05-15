@@ -7,7 +7,7 @@ load_child_theme_textdomain( 'mpp', apply_filters( 'child_theme_textdomain', get
 
 
 //* Child theme (do not remove)
-define( 'CHILD_THEME_NAME', __( 'Modern Portfolio Pro Theme', 'mpp' ) );
+define( 'CHILD_THEME_NAME', __( 'Modern Portfolio Pro', 'mpp' ) );
 define( 'CHILD_THEME_URL', 'http://my.studiopress.com/themes/modern-portfolio/' );
 define( 'CHILD_THEME_VERSION', '2.0.0' );
 
@@ -133,40 +133,66 @@ function mpp_remove_comment_form_allowed_tags( $defaults ) {
 
 //* Register widget areas
 
+
+// MP: Widgets for Pricing Page
+genesis_register_sidebar( array(
+	'id'          => 'pricing-subscriptions',
+	'name'        => __( 'Pricing - Subscriptions','mpp' ),
+	'description' => __( 'This is the Subscription section of the pricing page.','mpp' ),
+) );
+
+
+genesis_register_sidebar( array(
+	'id'          => 'pricing-bundles',
+	'name'        => __( 'Pricing - Bundles','mpp' ),
+	'description' => __( 'This is the Bundles section of the pricing page.','mpp' ),
+) );
+
+genesis_register_sidebar( array(
+	'id'          => 'pricing-guarantee',
+	'name'        => __( 'Pricing - Guarantee','mpp' ),
+	'description' => __( 'This is the Guarantee section of the pricing page.','mpp' ),
+) );
+
+
+
+
+
+
 // MP: Widgets for Treatment Homepage
 genesis_register_sidebar( array(
 	'id'          => 'home-about',
-	'name'        => __( 'Home B - About','mpp' ),
+	'name'        => __( 'Home - About','mpp' ),
 	'description' => __( 'This is the about section of the homepage.','mpp' ),
 ) );
 
 genesis_register_sidebar( array(
 	'id'          => 'home-main-testi',
-	'name'        => __( 'Home B - Main-Testimonial','mpp' ),
+	'name'        => __( 'Home - Main-Testimonial','mpp' ),
 	'description' => __( 'This is a centered, full-width testimonial on the homepage.','mpp' ),
 ) );
 
 genesis_register_sidebar( array(
 	'id'          => 'home-benefits',
-	'name'        => __( 'Home B - Benefits','mpp' ),
+	'name'        => __( 'Home - Benefits','mpp' ),
 	'description' => __( 'This is the benefits section of the homepage.','mpp' ),
 ) );
 
 genesis_register_sidebar( array(
 	'id'          => 'home-skills',
-	'name'        => __( 'Home B - Skills','mpp' ),
+	'name'        => __( 'Home - Skills','mpp' ),
 	'description' => __( 'This is the Skills section of the homepage.','mpp' ),
 ) );
 
 genesis_register_sidebar( array(
 	'id'          => 'home-derick',
-	'name'        => __( 'Home B - Derick','mpp' ),
+	'name'        => __( 'Home - Derick','mpp' ),
 	'description' => __( 'This is the About Derick Bailey section of the homepage.','mpp' ),
 ) );
 
 genesis_register_sidebar( array(
 	'id'          => 'home-final-cta',
-	'name'        => __( 'Home B - Final Call to Action','mpp' ),
+	'name'        => __( 'Home - Final Call to Action','mpp' ),
 	'description' => __( 'This is the Final CTA section of the homepage.','mpp' ),
 ) );
 

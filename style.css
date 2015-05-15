@@ -53,6 +53,8 @@
 		- Responsive Menu
 	- Content Area
 		- Home Page
+		- Pricing
+		- Signup
 		- Entries
 		- After Entry
 		- Pagination
@@ -545,7 +547,8 @@ Structure and Layout
 	padding-top: 3rem;
 }
 
-.mpp-home .site-inner {
+.mpp-home .site-inner,
+.mpp-pricing .site-inner {
 	padding: 0;
 	max-width: 100%;
 }
@@ -1265,7 +1268,7 @@ Site Navigation
 Content Area
 ---------------------------------------------------------------------------------------------------- */
 
-/* Home Page
+/* Custom Pages (Home, Pricing, Signup)
 --------------------------------------------- */
 
 #about,
@@ -1276,7 +1279,8 @@ Content Area
 #services,
 #benefits,
 #skills,
-#derick {
+#derick,
+#subscriptions {
 	clear: both;
 	overflow: hidden;
 }
@@ -1286,7 +1290,8 @@ Content Area
 #about,
 #control-about,
 #services,
-#derick {
+#derick,
+#subscriptions {
 	background-color: #222;
 	color: #fff;
 	/*font-size: 20px;
@@ -1300,7 +1305,8 @@ Content Area
 
 #about,
 #control-about,
-#services {
+#services,
+#subscriptions {
 	padding: 60px 0 0px;
 	padding: 6rem 0 0rem;
 }
@@ -1343,7 +1349,10 @@ Content Area
 #services a:hover,
 #derick .entry-meta a:hover,
 #derick .entry-title a,
-#derick a:hover  {
+#derick a:hover,
+#subscriptions .entry-meta a:hover,
+#subscriptions .entry-title a,
+#subscriptions a:hover,  {
 	color: #fff;
 }
 
@@ -1354,7 +1363,9 @@ Content Area
 #services .entry-meta a,
 #services .entry-title a:hover,
 #derick .entry-meta a,
-#derick .entry-title a:hover  {
+#derick .entry-title a:hover
+#subscriptions .entry-meta a,
+#subscriptions .entry-title a:hover  {
 	color: #ccc;
 }
 
@@ -1404,7 +1415,7 @@ raise content above fold */
   	margin-bottom: 0rem;
 }
 
-/*CSS for New Homepage Sections */
+/*Additional CSS for New Homepage Sections */
 
 	/* Main-Testimonial */
 
@@ -1665,7 +1676,60 @@ raise content above fold */
 		}
 
 
+/*Additional CSS for Pricing Page 
+--------------------------------------------- */
 
+#subscriptions h1 {
+	text-align: center;
+}
+
+#subscriptions .indie-plan,
+#subscriptions .team-plan {
+	background-color: #fefefe;
+	padding: 5.0rem;
+	padding: 50px;
+	margin-top: 3.6rem;
+	margin-top: 36px;
+	border-radius: 3px;
+}
+
+#subscriptions .indie-plan h2,
+#subscriptions .team-plan h2,
+#subscriptions .indie-plan li,
+#subscriptions .team-plan li,
+#subscriptions .indie-plan p,
+#subscriptions .team-plan p  {
+	color: #222;
+}
+
+#subscriptions h2 {
+	font-weight: 700;
+}
+
+#subscriptions .indie-plan .plan-fee {
+	color: #03C6C1;
+	float:right;
+	font-weight: 400;
+}
+
+#subscriptions .team-plan .plan-fee {
+	color: #FFA901;
+	float:right;
+	font-weight: 400;
+}
+
+#subscriptions ul {
+	list-style-position: inside;
+}
+
+
+/* Signup
+--------------------------------------------- */
+
+
+.mpp-signup {
+	background-color: #222;
+}
 
 /* Entries
 --------------------------------------------- */
