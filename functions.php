@@ -229,13 +229,13 @@ genesis_register_sidebar( array(
 // ) );
 
 
-// [signup_button text="foo bar"]
+// On Homepage: [signup_button text="foo bar"]
 function signup_button_fn( $atts ) {
   extract( shortcode_atts( array(
 
   	// MP: changed text attr for optimized version:
     'text' => '￼Get FULL Access to <br>75+ Game-Changing Screencasts',
-    'url' => 'http://localhost:8888/watchmecode/pricing-plans/',
+    'url' => get_bloginfo('url') . '/pricing-plans/',
     'icon' => ""
   ), $atts ) );
 
@@ -247,6 +247,41 @@ function signup_button_fn( $atts ) {
   return "<a class='button' href='${url}'>${iconImage}{$text}</a>"; 
 }
 add_shortcode( 'signup_button', 'signup_button_fn' );
+
+
+
+// On Pricing Page: [link-to-signup-form text="foo bar"]
+function link_to_signup_form_fn( $atts ) {
+  extract( shortcode_atts( array(
+
+    'text' => 'Start Conquering Javascript',
+    'url' => get_bloginfo('url') . '/signup/',
+  ), $atts ) );
+
+
+  return "<a class='button' href='${url}'>${text}</a>"; 
+}
+add_shortcode( 'link_to_signup_form', 'link_to_signup_form_fn' );
+
+
+
+
+// On Pricing Page: [link-to-screencasts text="foo bar"]
+function link_to_catalog_fn( $atts ) {
+  extract( shortcode_atts( array(
+
+    'text' => 'Explore the full screencast catalog',
+    'url' => get_bloginfo('url') . '/categories/episodes/',
+  ), $atts ) );
+
+
+  return "<a href='${url}'><p>${text}</p></a>"; 
+}
+add_shortcode( 'link_to_catalog', 'link_to_catalog_fn' );
+
+
+
+
 
 add_filter('rcp_registration_choose_subscription', 'rcp_choose_sub_level_title');
 function rcp_choose_sub_level_title(){
