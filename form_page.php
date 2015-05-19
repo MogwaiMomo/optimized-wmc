@@ -6,11 +6,11 @@
 */
 
 
-add_action( 'wp_enqueue_scripts', 'mpp_enqueue_scripts' );
 /**
  * Enqueue Scripts
  */
 
+add_action( 'wp_enqueue_scripts', 'mpp_enqueue_scripts' );
 
 
 function mpp_enqueue_scripts() {

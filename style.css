@@ -826,6 +826,10 @@ img.alignright,
 	font-size: 2.4rem;
 }
 
+.category article {
+	border-bottom: solid 2px #bbb;
+}
+
 .widget-title {
 	font-size: 24px;
 	font-size: 2.4rem;
@@ -2026,6 +2030,23 @@ raise content above fold */
 	.mpp-signup .click-trigger {
 		text-align: center;
 	}
+
+
+	/* Screencasts page
+	--------------------------------------------- */
+
+	.category-free header:before {
+		content:'FREE!';
+		font-size: 16px;
+		display:block;
+		float: right;
+		background-color: #FF9600;
+		color: #fefefe;
+		padding: 5px 15px;
+		border-radius: 5px;
+	}
+
+
 
 /* Entries
 --------------------------------------------- */

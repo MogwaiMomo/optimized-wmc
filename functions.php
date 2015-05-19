@@ -133,6 +133,14 @@ function mpp_remove_comment_form_allowed_tags( $defaults ) {
 
 //* Register widget areas
 
+//* MP: Widgets for Screencasts Page
+
+genesis_register_sidebar( array(
+	'id'          => 'category-search',
+	'name'        => __( 'Screencasts - Search','mpp' ),
+	'description' => __( 'This is the Search widget of the Episodes page.','mpp' ),
+) );
+
 
 // MP: Widgets for Pricing Page
 genesis_register_sidebar( array(
