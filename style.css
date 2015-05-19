@@ -2046,6 +2046,9 @@ raise content above fold */
 		border-radius: 5px;
 	}
 
+	.pagination {
+		display:none;
+	}
 
 
 /* Entries
