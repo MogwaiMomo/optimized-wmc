@@ -1,5 +1,8 @@
+<!-- For Individuals (ID = 2) -->
+
 <?php global $rcp_options, $rcp_level, $post; ?>
 
+<!--<?php echo "THIS IS FOR INDIVIDUALS" ?> -->
 <?php if( ! is_user_logged_in() ) { ?>
 	<h1 class="rcp_header">
 		<?php echo apply_filters( 'rcp_registration_header_logged_in', __( '￼Get Full Access to ALL Screencasts', 'rcp' ) ); ?>
@@ -15,7 +18,7 @@ rcp_show_error_messages( 'register' ); ?>
 
 <form id="rcp_registration_form" class="rcp_form" method="POST" action="<?php echo esc_url( rcp_get_current_url() ); ?>">
 
-	<div class="rcp_description"><?php echo wpautop( wptexturize( rcp_get_subscription_description( $rcp_level ) ) ); ?></div>
+	<!-- <div class="rcp_description"><?php echo wpautop( wptexturize( rcp_get_subscription_description( $rcp_level ) ) ); ?></div> -->
 	
 	<?php if( ! is_user_logged_in() ) { ?>
 
@@ -24,40 +27,40 @@ rcp_show_error_messages( 'register' ); ?>
 
 		<fieldset class="rcp_user_fieldset">
 
-		<div class="first-last">
-			<p id="rcp_user_first_wrap" class="one-half first">
-				<label for="rcp_user_first"><?php echo apply_filters ( 'rcp_registration_firstname_label', __( 'First Name', 'rcp' ) ); ?></label>
-				<input name="rcp_user_first" id="rcp_user_first" type="text" placeholder="First name" <?php if( isset( $_POST['rcp_user_first'] ) ) { echo 'value="' . esc_attr( $_POST['rcp_user_first'] ) . '"'; } ?>/>
-			</p>
-			<p id="rcp_user_last_wrap" class="one-half second">
-				<label for="rcp_user_last"><?php echo apply_filters ( 'rcp_registration_lastname_label', __( 'Last Name', 'rcp' ) ); ?></label>
-				<input name="rcp_user_last" id="rcp_user_last" type="text" placeholder="Last name" <?php if( isset( $_POST['rcp_user_last'] ) ) { echo 'value="' . esc_attr( $_POST['rcp_user_last'] ) . '"'; } ?>/>
-			</p>
-		</div>
+			<div class="first-last">
+				<p id="rcp_user_first_wrap" class="one-half first">
+					<label for="rcp_user_first"><?php echo apply_filters ( 'rcp_registration_firstname_label', __( 'First Name', 'rcp' ) ); ?></label>
+					<input name="rcp_user_first" id="rcp_user_first" type="text" placeholder="First name" <?php if( isset( $_POST['rcp_user_first'] ) ) { echo 'value="' . esc_attr( $_POST['rcp_user_first'] ) . '"'; } ?>/>
+				</p>
+				<p id="rcp_user_last_wrap" class="one-half second">
+					<label for="rcp_user_last"><?php echo apply_filters ( 'rcp_registration_lastname_label', __( 'Last Name', 'rcp' ) ); ?></label>
+					<input name="rcp_user_last" id="rcp_user_last" type="text" placeholder="Last name" <?php if( isset( $_POST['rcp_user_last'] ) ) { echo 'value="' . esc_attr( $_POST['rcp_user_last'] ) . '"'; } ?>/>
+				</p>
+			</div>
 
 
-		<div class="login-credentials">
+			<div class="login-credentials">
 
-			<p id="rcp_user_login_wrap" class="one-half first">
-				<label for="rcp_user_Login"><?php echo apply_filters ( 'rcp_registration_username_label', __( 'Username', 'rcp' ) ); ?></label>
-				<input name="rcp_user_login" id="rcp_user_login" class="required" type="text" placeholder="Username"<?php if( isset( $_POST['rcp_user_login'] ) ) { echo 'value="' . esc_attr( $_POST['rcp_user_login'] ) . '"'; } ?>/>
-			</p>
-			<p id="rcp_user_email_wrap" class="one-half second">
-				<label for="rcp_user_email"><?php echo apply_filters ( 'rcp_registration_email_label', __( 'Email', 'rcp' ) ); ?></label>
-				<input name="rcp_user_email" id="rcp_user_email" class="required" type="text" placeholder="Email address"<?php if( isset( $_POST['rcp_user_email'] ) ) { echo 'value="' . esc_attr( $_POST['rcp_user_email'] ) . '"'; } ?>/>
-			</p>
-		</div>
+				<p id="rcp_user_login_wrap" class="one-half first">
+					<label for="rcp_user_Login"><?php echo apply_filters ( 'rcp_registration_username_label', __( 'Username', 'rcp' ) ); ?></label>
+					<input name="rcp_user_login" id="rcp_user_login" class="required" type="text" placeholder="Username"<?php if( isset( $_POST['rcp_user_login'] ) ) { echo 'value="' . esc_attr( $_POST['rcp_user_login'] ) . '"'; } ?>/>
+				</p>
+				<p id="rcp_user_email_wrap" class="one-half second">
+					<label for="rcp_user_email"><?php echo apply_filters ( 'rcp_registration_email_label', __( 'Email', 'rcp' ) ); ?></label>
+					<input name="rcp_user_email" id="rcp_user_email" class="required" type="text" placeholder="Email address"<?php if( isset( $_POST['rcp_user_email'] ) ) { echo 'value="' . esc_attr( $_POST['rcp_user_email'] ) . '"'; } ?>/>
+				</p>
+			</div>
 
-		<div class="password-creation">
-			<p id="rcp_password_wrap" class="one-half first">
-				<label for="password"><?php echo apply_filters ( 'rcp_registration_password_label', __( 'Password', 'rcp' ) ); ?></label>
-				<input name="rcp_user_pass" id="rcp_password" class="required" type="password" placeholder="Create password"/>
-			</p>
-			<p id="rcp_password_again_wrap" class="one-half second">
-				<label for="password_again"><?php echo apply_filters ( 'rcp_registration_password_again_label', __( 'Password Again', 'rcp' ) ); ?></label>
-				<input name="rcp_user_pass_confirm" id="rcp_password_again" class="required" type="password" placeholder="Type password again"/>
-			</p>
-		</div>
+			<div class="password-creation">
+				<p id="rcp_password_wrap" class="one-half first">
+					<label for="password"><?php echo apply_filters ( 'rcp_registration_password_label', __( 'Password', 'rcp' ) ); ?></label>
+					<input name="rcp_user_pass" id="rcp_password" class="required" type="password" placeholder="Create password"/>
+				</p>
+				<p id="rcp_password_again_wrap" class="one-half second">
+					<label for="password_again"><?php echo apply_filters ( 'rcp_registration_password_again_label', __( 'Password Again', 'rcp' ) ); ?></label>
+					<input name="rcp_user_pass_confirm" id="rcp_password_again" class="required" type="password" placeholder="Type password again"/>
+				</p>
+			</div>
 
 		<?php do_action( 'rcp_after_password_registration_field' ); ?>
 
@@ -110,9 +113,16 @@ rcp_show_error_messages( 'register' ); ?>
 
 	<?php do_action( 'rcp_before_registration_submit_field' ); ?>
 
+
+
+
+<!-- Button -->
+
+
 	<p id="rcp_submit_wrap">
 		<input type="hidden" name="rcp_level" value="<?php echo absint( $rcp_level ); ?>"/>
 		<input type="hidden" name="rcp_register_nonce" value="<?php echo wp_create_nonce('rcp-register-nonce' ); ?>"/>
-		<input type="submit" name="rcp_submit_registration" id="rcp_submit" value="<?php echo apply_filters ( 'rcp_registration_register_button', __( 'Register', 'rcp' ) ); ?>"/>
+		<input type="submit" name="rcp_submit_registration" id="rcp_submit" value="<?php echo apply_filters ( 'rcp_registration_register_button', __( 'Access Screencasts Now', 'rcp' ) ); ?>"/>
 	</p>
+	<p class="click-trigger">Try it risk-free for 30 days. Love it or your money back!</p>
 </form>

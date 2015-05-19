@@ -112,9 +112,9 @@ rcp_show_error_messages( 'register' ); ?>
 					<?php foreach( $gateways as $key => $gateway ) : ?>
 						<option value="<?php echo esc_attr( $key ); ?>"><?php echo esc_html( $gateway ); ?></option>
 					<?php endforeach; ?>
-				</select>
+				</select> 
 				<label for="rcp_gateway"><?php _e( 'Choose Your Payment Method', 'rcp' ); ?></label>
-			</p>
+				</p>
 		</fieldset>
 	<?php else: ?>
 		<?php foreach( $gateways as $key => $gateway ) : ?>
@@ -125,6 +125,7 @@ rcp_show_error_messages( 'register' ); ?>
 
 	<?php do_action( 'rcp_before_registration_submit_field', $levels ); ?>
 
+<!-- Button -->
 	<p id="rcp_submit_wrap">
 		<input type="hidden" name="rcp_register_nonce" value="<?php echo wp_create_nonce('rcp-register-nonce' ); ?>"/>
 		<input type="submit" name="rcp_submit_registration" id="rcp_submit" value="<?php echo apply_filters ( 'rcp_registration_register_button', __( 'Access Screencasts Now', 'rcp' ) ); ?>"/>

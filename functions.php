@@ -250,18 +250,32 @@ add_shortcode( 'signup_button', 'signup_button_fn' );
 
 
 
-// On Pricing Page: [link-to-signup-form text="foo bar"]
-function link_to_signup_form_fn( $atts ) {
+// On Pricing Page: [link-to-indie-signup-form text="foo bar"]
+function link_to_indie_signup_form_fn( $atts ) {
   extract( shortcode_atts( array(
 
     'text' => 'Start Conquering Javascript',
-    'url' => get_bloginfo('url') . '/signup/',
+    'url' => get_bloginfo('url') . '/indie-signup/',
   ), $atts ) );
 
 
   return "<a class='button' href='${url}'>${text}</a>"; 
 }
-add_shortcode( 'link_to_signup_form', 'link_to_signup_form_fn' );
+add_shortcode( 'link_to_indie_signup_form', 'link_to_indie_signup_form_fn' );
+
+// On Pricing Page: [link-to-team-signup-form text="foo bar"]
+function link_to_team_signup_form_fn( $atts ) {
+  extract( shortcode_atts( array(
+
+    'text' => 'Start Conquering Javascript',
+    'url' => get_bloginfo('url') . '/teams/',
+  ), $atts ) );
+
+
+  return "<a class='button' href='${url}'>${text}</a>"; 
+}
+add_shortcode( 'link_to_team_signup_form', 'link_to_team_signup_form_fn' );
+
 
 
 
