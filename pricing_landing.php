@@ -45,6 +45,8 @@ function mpp_pricing_genesis_meta() {
 		// Add pricing page widgets
 		add_action( 'genesis_loop', 'mpp_pricing_widgets' );
 
+	
+
 		// Remove Footer
 		 remove_action('genesis_footer', 'genesis_do_footer');
 		 remove_action('genesis_footer', 'genesis_footer_markup_open', 5);

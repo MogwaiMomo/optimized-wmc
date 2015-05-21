@@ -1,4 +1,4 @@
-<!-- For Individuals (ID = 4) -->
+<!-- For Teams (ID = 4) -->
 
 <?php global $rcp_options, $rcp_level, $post; ?>
 

@@ -1,28 +1,27 @@
 <?php
 /**
-* Template Name: Category Template
+* Template Name: Search Results Template
 * Description: Optimized Search/Browse page for Categories/Episodes. 
 */
 
 
-add_action( 'wp_enqueue_scripts', 'mpp_enqueue_scripts' );
+function genesis_do_search_title() {
 
+	$title = sprintf( '<div class="archive-description"><h1 class="archive-title">%s %s</h1></div>', apply_filters( 'genesis_search_title_text', __( 'Search results for: ', 'genesis' ) ), get_search_query() );
 
-function mpp_enqueue_scripts() {
+	echo apply_filters( 'genesis_search_title_output', $title ) . "\n";
 
-		wp_enqueue_script( 'scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.min.js', array( 'jquery' ), '1.4.5-beta', true );
-		wp_enqueue_script( 'localScroll', get_stylesheet_directory_uri() . '/js/jquery.localScroll.min.js', array( 'scrollTo' ), '1.2.8b', true );
-		wp_enqueue_script( 'scroll', get_stylesheet_directory_uri() . '/js/scroll.js', array( 'localScroll' ), '', true );
 }
 
 
-
-add_action( 'genesis_meta', 'mpp_screencasts_genesis_meta' );
 /**
- * Add widget support for Screencasts. If no widgets active, display the default loop.
+ * Add widget support for Search results. If no widgets active, display the default loop.
  *
  */
-function mpp_screencasts_genesis_meta() {
+
+add_action( 'genesis_meta', 'mpp_search_results_genesis_meta' );
+
+function mpp_search_results_genesis_meta() {
 
 	if ( is_active_sidebar( 'category-search' ) ) {
 
@@ -45,6 +44,7 @@ function mpp_screencasts_genesis_meta() {
 
 		// * Add search widget
 		add_action( 'genesis_before_content', 'mpp_search_widget', 5 );
+		add_action( 'genesis_before_loop', 'genesis_do_search_title' );
 
 		//* Add the default Genesis loop
 		add_action( 'genesis_loop', 'genesis_do_loop' );
@@ -63,14 +63,14 @@ function mpp_screencasts_genesis_meta() {
 
 function mpp_body_class( $classes ) {
 
-	$classes[] = 'mpp-category';
+	$classes[] = 'mpp-search-results';
 	return $classes;
 	
 }
 
 
 function mpp_search_widget() {
-	
+
 	genesis_widget_area( 'category-search', array(
 	'before' => '<div id="category-search"><div class="wrap">',
 	'after'  => '</div></div>',
@@ -83,4 +83,5 @@ function mpp_search_widget() {
 
 //* Run the Genesis loop
 genesis();
+
 

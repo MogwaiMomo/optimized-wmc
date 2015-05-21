@@ -18,6 +18,7 @@ function mpp_enqueue_scripts() {
 		wp_enqueue_script( 'scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.min.js', array( 'jquery' ), '1.4.5-beta', true );
 		wp_enqueue_script( 'localScroll', get_stylesheet_directory_uri() . '/js/jquery.localScroll.min.js', array( 'scrollTo' ), '1.2.8b', true );
 		wp_enqueue_script( 'scroll', get_stylesheet_directory_uri() . '/js/scroll.js', array( 'localScroll' ), '', true );
+		wp_enqueue_script( 'creditCard', get_stylesheet_directory_uri() . '/js/credit-card.js');
 }
 
 

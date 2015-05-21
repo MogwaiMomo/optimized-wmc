@@ -34,6 +34,8 @@ function mpp_enqueue_responsive_script() {
 
 }
 
+
+
 //* Add new image sizes
 add_image_size( 'blog', 340, 140, TRUE );
 add_image_size( 'portfolio', 340, 230, TRUE );
@@ -133,76 +135,77 @@ function mpp_remove_comment_form_allowed_tags( $defaults ) {
 
 //* Register widget areas
 
-//* MP: Widgets for Screencasts Page
+	//* MP: Widgets for Screencasts Page
 
-genesis_register_sidebar( array(
-	'id'          => 'category-search',
-	'name'        => __( 'Screencasts - Search','mpp' ),
-	'description' => __( 'This is the Search widget of the Episodes page.','mpp' ),
-) );
-
-
-// MP: Widgets for Pricing Page
-genesis_register_sidebar( array(
-	'id'          => 'pricing-subscriptions',
-	'name'        => __( 'Pricing - Subscriptions','mpp' ),
-	'description' => __( 'This is the Subscription section of the pricing page.','mpp' ),
-) );
-
-
-genesis_register_sidebar( array(
-	'id'          => 'pricing-bundles',
-	'name'        => __( 'Pricing - Bundles','mpp' ),
-	'description' => __( 'This is the Bundles section of the pricing page.','mpp' ),
-) );
-
-genesis_register_sidebar( array(
-	'id'          => 'pricing-guarantee',
-	'name'        => __( 'Pricing - Guarantee','mpp' ),
-	'description' => __( 'This is the Guarantee section of the pricing page.','mpp' ),
-) );
+	genesis_register_sidebar( array(
+		'id' => 'category-search',
+		'name' => __( 'Search Widget', 'mpp' ),
+		'description' =>  __( 'Display Search Before Episodes Loop', 'mpp' ),
+	) );
 
 
 
+	// MP: Widgets for Pricing Page
+	genesis_register_sidebar( array(
+		'id'          => 'pricing-subscriptions',
+		'name'        => __( 'Pricing - Subscriptions','mpp' ),
+		'description' => __( 'This is the Subscription section of the pricing page.','mpp' ),
+	) );
+
+
+	genesis_register_sidebar( array(
+		'id'          => 'pricing-bundles',
+		'name'        => __( 'Pricing - Bundles','mpp' ),
+		'description' => __( 'This is the Bundles section of the pricing page.','mpp' ),
+	) );
+
+	genesis_register_sidebar( array(
+		'id'          => 'pricing-guarantee',
+		'name'        => __( 'Pricing - Guarantee','mpp' ),
+		'description' => __( 'This is the Guarantee section of the pricing page.','mpp' ),
+	) );
 
 
 
-// MP: Widgets for Treatment Homepage
-genesis_register_sidebar( array(
-	'id'          => 'home-about',
-	'name'        => __( 'Home - About','mpp' ),
-	'description' => __( 'This is the about section of the homepage.','mpp' ),
-) );
 
-genesis_register_sidebar( array(
-	'id'          => 'home-main-testi',
-	'name'        => __( 'Home - Main-Testimonial','mpp' ),
-	'description' => __( 'This is a centered, full-width testimonial on the homepage.','mpp' ),
-) );
 
-genesis_register_sidebar( array(
-	'id'          => 'home-benefits',
-	'name'        => __( 'Home - Benefits','mpp' ),
-	'description' => __( 'This is the benefits section of the homepage.','mpp' ),
-) );
 
-genesis_register_sidebar( array(
-	'id'          => 'home-skills',
-	'name'        => __( 'Home - Skills','mpp' ),
-	'description' => __( 'This is the Skills section of the homepage.','mpp' ),
-) );
+	// MP: Widgets for New Homepage
+	genesis_register_sidebar( array(
+		'id'          => 'home-about',
+		'name'        => __( 'Home - About','mpp' ),
+		'description' => __( 'This is the about section of the homepage.','mpp' ),
+	) );
 
-genesis_register_sidebar( array(
-	'id'          => 'home-derick',
-	'name'        => __( 'Home - Derick','mpp' ),
-	'description' => __( 'This is the About Derick Bailey section of the homepage.','mpp' ),
-) );
+	genesis_register_sidebar( array(
+		'id'          => 'home-main-testi',
+		'name'        => __( 'Home - Main-Testimonial','mpp' ),
+		'description' => __( 'This is a centered, full-width testimonial on the homepage.','mpp' ),
+	) );
 
-genesis_register_sidebar( array(
-	'id'          => 'home-final-cta',
-	'name'        => __( 'Home - Final Call to Action','mpp' ),
-	'description' => __( 'This is the Final CTA section of the homepage.','mpp' ),
-) );
+	genesis_register_sidebar( array(
+		'id'          => 'home-benefits',
+		'name'        => __( 'Home - Benefits','mpp' ),
+		'description' => __( 'This is the benefits section of the homepage.','mpp' ),
+	) );
+
+	genesis_register_sidebar( array(
+		'id'          => 'home-skills',
+		'name'        => __( 'Home - Skills','mpp' ),
+		'description' => __( 'This is the Skills section of the homepage.','mpp' ),
+	) );
+
+	genesis_register_sidebar( array(
+		'id'          => 'home-derick',
+		'name'        => __( 'Home - Derick','mpp' ),
+		'description' => __( 'This is the About Derick Bailey section of the homepage.','mpp' ),
+	) );
+
+	genesis_register_sidebar( array(
+		'id'          => 'home-final-cta',
+		'name'        => __( 'Home - Final Call to Action','mpp' ),
+		'description' => __( 'This is the Final CTA section of the homepage.','mpp' ),
+	) );
 
 
 
@@ -379,3 +382,136 @@ function episode_length_fn() {
 } 
 
 add_action( 'genesis_entry_footer', 'genesis_prev_next_post_nav' );
+
+
+
+
+
+// Customize search functionality to include categories and tags:  
+// Source of code: http://www.rfmeier.net/include-category-and-post-tag-names-in-the-wordpress-search/
+
+function custom_posts_join( $join, $query )
+{
+    global $wpdb;
+
+    //* if main query and search...
+    if( is_main_query() && is_search() )
+    {
+        //* join term_relationships, term_taxonomy, and terms into the current SQL where clause
+        $join .= "
+        LEFT JOIN 
+        ( 
+            {$wpdb->term_relationships}
+            INNER JOIN 
+                {$wpdb->term_taxonomy} ON {$wpdb->term_taxonomy}.term_taxonomy_id = {$wpdb->term_relationships}.term_taxonomy_id 
+            INNER JOIN 
+                {$wpdb->terms} ON {$wpdb->terms}.term_id = {$wpdb->term_taxonomy}.term_id 
+        ) 
+        ON {$wpdb->posts}.ID = {$wpdb->term_relationships}.object_id ";
+    }
+
+    return $join;
+}
+add_filter( 'posts_join', 'custom_posts_join', 10, 2 );
+
+
+
+
+
+function custom_posts_where( $where, $query )
+{
+    global $wpdb;
+
+    if( is_main_query() && is_search() )
+    {
+        //* get additional where clause for the user
+        $user_where = get_user_posts_where();
+        
+        $where .= " OR (
+                        {$wpdb->term_taxonomy}.taxonomy IN( 'category', 'post_tag' ) 
+                        AND
+                        {$wpdb->terms}.name LIKE '%" . esc_sql( get_query_var( 's' ) ) . "%'
+                        {$user_where}
+                    )";
+    }
+
+    return $where;
+}
+add_filter( 'posts_where', 'custom_posts_where', 10, 2 );
+
+/**
+ * Get a where clause dependent on the current user's status.
+ *
+ * @uses get_current_user_id()
+ * @link http://codex.wordpress.org/Function_Reference/get_current_user_id
+ * 
+ * @return string The user where clause.
+ */
+function get_user_posts_where()
+{
+    global $wpdb;
+
+    $user_id = get_current_user_id();
+    $sql     = '';
+    $status  = array( "'publish'" );
+
+    if( 0 !== $user_id )
+    {
+        $status[] = "'private'";
+        
+        $sql .= " AND {$wpdb->posts}.post_author = " . absint( $user_id );
+    }
+
+    $sql .= " AND {$wpdb->posts}.post_status IN( " . implode( ',', $status ) . " ) ";
+    
+    return $sql;
+}
+
+
+
+
+
+function custom_posts_groupby( $groupby, $query )
+{
+    global $wpdb;
+
+    //* if is main query and a search...
+    if( is_main_query() && is_search() )
+    {
+        //* assign the GROUPBY
+        $groupby = "{$wpdb->posts}.ID";
+    }
+
+    return $groupby;
+}
+add_filter( 'posts_groupby', 'custom_posts_groupby', 10, 2 );
+
+
+
+// Remove pages from Search function:
+// source: http://www.wpbeginner.com/wp-tutorials/how-to-exclude-pages-from-wordpress-search-results/
+
+function SearchFilter($query) {
+	if ($query->is_search) {
+	$query->set('post_type', 'post');
+	}
+	return $query;
+}
+
+add_filter('pre_get_posts','SearchFilter');
+
+
+//* Customize search form input box text
+add_filter( 'genesis_search_text', 'sp_search_text' );
+function sp_search_text( $text ) {
+	return esc_attr( 'Type your JavaScript topic here ...' );
+}
+
+
+//* Customize search form input button text
+add_filter( 'genesis_search_button_text', 'sp_search_button_text' );
+function sp_search_button_text( $text ) {
+	return esc_attr( 'Search Episodes' );
+}
+
+

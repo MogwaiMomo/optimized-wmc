@@ -2,7 +2,6 @@
 
 <?php global $rcp_options, $rcp_level, $post; ?>
 
-<!--<?php echo "THIS IS FOR INDIVIDUALS" ?> -->
 <?php if( ! is_user_logged_in() ) { ?>
 	<h1 class="rcp_header">
 		<?php echo apply_filters( 'rcp_registration_header_logged_in', __( '￼Get Full Access to ALL Screencasts', 'rcp' ) ); ?>
