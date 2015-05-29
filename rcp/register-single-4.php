@@ -66,7 +66,7 @@ rcp_show_error_messages( 'register' ); ?>
 	</fieldset>
 	<?php } ?>
 
-<!-- 	<?php if( rcp_has_discounts() ) : ?>
+	<?php if( rcp_has_discounts() ) : ?>
 	<fieldset class="rcp_discounts_fieldset">
 		<p id="rcp_discount_code_wrap">
 			<label for="rcp_discount_code">
@@ -77,7 +77,7 @@ rcp_show_error_messages( 'register' ); ?>
 			<input type="text" id="rcp_discount_code" name="rcp_discount" class="rcp_discount_code" value=""/>
 		</p>
 	</fieldset>
-	<?php endif; ?> -->
+	<?php endif; ?>
 
 	<?php do_action( 'rcp_after_register_form_fields' ); ?>
 
