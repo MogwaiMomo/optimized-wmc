@@ -1944,9 +1944,14 @@ raise content above fold */
 			text-align: center;
 		}
 
-		.rcp_user_fieldset {
+		.rcp_user_fieldset,
+		.rcp_discounts_fieldset {
 			border:none;
 			
+		}
+
+		.rcp_user_fieldset {
+			margin-bottom: 0;
 		}
 
 		#rcp-stripe-fields,
@@ -1964,12 +1969,35 @@ raise content above fold */
 			overflow:hidden;
 		}
 
-		.password-creation {
-			padding-bottom: 3.0rem;
-			padding-bottom: 30px;
-			border-bottom: solid 3px #bbb;
+		#discount-field {
+			padding:0;
+			margin:0;
+			float:right;
 		}
-			
+
+		.discount-link {
+			float:right;
+			font-size: 1.4rem;
+			font-size: 14px;
+			padding-bottom: 1.0rem;
+			padding-bottom: 10px;
+		}
+
+		.hide {
+			display: none;
+		}
+
+		#rcp_registration_form fieldset .rcp_discounts_fieldset,
+		#rcp_registration_form fieldset .rcp_discounts_fieldset p {
+			padding: 0;
+			padding: 0;
+			margin: 0;
+			margin: 0;
+		}
+		
+
+
+
 		.mpp-signup label {
 			display: none;
 		}
@@ -3072,15 +3100,20 @@ Media Queries
 clear: both;
 }
 
-#rcp_registration_form fieldset {
+/*#rcp_registration_form fieldset {
   margin-top: 2em;
   margin-bottom: 2em;
-}
+}*/
 
 .card-expiry-month {
   display: inline;
   width: 100px;
   margin-left: 2em;
+}
+
+input#rcp_discount_code {
+	padding: 0.8rem;
+	padding: 8px;
 }
 
 .card-expiry-year {
