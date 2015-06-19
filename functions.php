@@ -390,6 +390,10 @@ add_action( 'genesis_entry_footer', 'genesis_prev_next_post_nav' );
 // Customize search functionality to include categories and tags:  
 // Source of code: http://www.rfmeier.net/include-category-and-post-tag-names-in-the-wordpress-search/
 
+
+
+
+
 function custom_posts_join( $join, $query )
 {
     global $wpdb;
@@ -447,6 +451,7 @@ add_filter( 'posts_where', 'custom_posts_where', 10, 2 );
  * 
  * @return string The user where clause.
  */
+
 function get_user_posts_where()
 {
     global $wpdb;
@@ -488,17 +493,24 @@ add_filter( 'posts_groupby', 'custom_posts_groupby', 10, 2 );
 
 
 
-// Remove pages from Search function:
+// Remove pages from Search function 
 // source: http://www.wpbeginner.com/wp-tutorials/how-to-exclude-pages-from-wordpress-search-results/
 
 function SearchFilter($query) {
-	if ($query->is_search) {
+
+    // MP: Leave admin search results alone:
+    if( $query->is_admin )
+    return $query;
+	
+    if ($query->is_search) {
 	$query->set('post_type', 'post');
 	}
 	return $query;
 }
 
 add_filter('pre_get_posts','SearchFilter');
+
+
 
 
 //* Customize search form input box text
