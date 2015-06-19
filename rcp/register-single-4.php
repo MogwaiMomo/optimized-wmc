@@ -63,7 +63,9 @@ rcp_show_error_messages( 'register' ); ?>
 
 		<?php do_action( 'rcp_after_password_registration_field' ); ?>
 
-	<div id="discount-field"class="one-fourth">
+		<!-- MP: Add in discount code, floated right  -->
+
+		<div id="discount-field"class="one-fourth">
 			<a class="discount-link" href="#">Got a discount code?</a>
 			<?php if( rcp_has_discounts() ) : ?>
 			<fieldset class="rcp_discounts_fieldset">
@@ -79,10 +81,23 @@ rcp_show_error_messages( 'register' ); ?>
 			<?php endif; ?>
 	</div>
 
+		<!-- MP: END add in discount code, floated right  -->
 
 	</fieldset>
 	<?php } ?>
 
+<!-- 	<?php if( rcp_has_discounts() ) : ?>
+	<fieldset class="rcp_discounts_fieldset">
+		<p id="rcp_discount_code_wrap">
+			<label for="rcp_discount_code">
+				<?php _e( 'Discount Code', 'rcp' ); ?>
+				<span class="rcp_discount_valid" style="display: none;"> - <?php _e( 'Valid', 'rcp' ); ?></span>
+				<span class="rcp_discount_invalid" style="display: none;"> - <?php _e( 'Invalid', 'rcp' ); ?></span>
+			</label>
+			<input type="text" id="rcp_discount_code" name="rcp_discount" class="rcp_discount_code" value=""/>
+		</p>
+	</fieldset>
+	<?php endif; ?> -->
 
 	<?php do_action( 'rcp_after_register_form_fields' ); ?>
 

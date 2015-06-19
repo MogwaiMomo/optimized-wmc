@@ -441,7 +441,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-#menu-item-2982 > a {
+#menu-header li:last-child > a {
 	background-color: #27B4B2; background-image: -webkit-gradient(linear, left top, left bottom, from(#27B4B2), to(#0C8684));
 	background-image: -webkit-linear-gradient(top, #27B4B2, #0C8684);
 	background-image: -moz-linear-gradient(top, #27B4B2, #0C8684);
@@ -465,7 +465,7 @@ input[type="submit"],
 	text-decoration: none;
 }
 
-#menu-item-2982 > a {
+#menu-header li:last-child > a {
 	font-size: inherit;
 	font-size: inherit;
 	padding: 12px 42px;
@@ -480,7 +480,7 @@ button:hover,
 input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"],
-#menu-item-2982 > a:hover  {
+#menu-item-3198 > a:hover  {
 	border:1px solid #0E9997;
 	color: #fefefe;
 	background-color: #35F2F0; background-image: -webkit-gradient(linear, left top, left bottom, from(#35F2F0), to(#0E9997));
@@ -573,11 +573,19 @@ Structure and Layout
 
 .mpp-landing .site-inner {
 	border: 1px solid #222;
-	max-width: 700px;
+	max-width: 750px;
 	margin: 32px auto;
 	margin: 3.2rem auto;
 	padding: 48px 60px 0;
-	padding: 4.8rem 6rem 0;
+	padding: 4.8rem 3rem 0;
+}
+
+.mpp-landing h1 {
+	text-align: center;
+}
+
+.mpp-landing ul {
+	margin-left: 4rem !important;
 }
 
 /* Column Widths and Positions
@@ -749,14 +757,14 @@ a.alignleft img,
 img.alignleft,
 .wp-caption.alignleft {
 	margin: 0 24px 24px 0;
-	margin: 0 2.4rem 2.4rem 0;
+	margin: 0 2.4rem 0.5rem 0;
 }
 
 a.alignright img,
 img.alignright,
 .wp-caption.alignright {
 	margin: 0 0 24px 24px;
-	margin: 0 0 2.4rem 2.4rem;
+	margin: 0 0 0.5rem 2.4rem;
 }
 
 .entry-content .wp-caption-text {
@@ -1884,14 +1892,18 @@ raise content above fold */
 		  background-color: #fefefe;
 		  border: solid 1px #eee;
 		  padding: 30px;
-		  margin: 7px;
+		  margin: 3px;
 		  min-height: 400px;
 		  min-height: 40.0rem;
 		  float: left;
 		}
 
+		#bundles .edd_downloads_list div[style*="clear:both;"]{
+			display:none;
+		}
+
 		div[id*="edd_download_"] {
-		  width: 32%;
+		  width: 32% !important;
 		}
 
 		#guarantee .guarantee-copy {	
@@ -1927,13 +1939,15 @@ raise content above fold */
 			background-color: #222;
 		}
 
-		.post-43,
-		.post-2980 {
+		.post-3224,
+		.post-3222 {
 			max-width: 750px;
 			margin: 0 auto;
 		}
 
 		.mpp-signup article .entry-content {
+                        max-width: 750px;
+                        margin: 0 auto;  
 			background-color: #fefefe;
 			border-radius: 3px;
 			padding: 5.0rem;
@@ -1950,10 +1964,6 @@ raise content above fold */
 			
 		}
 
-		.rcp_user_fieldset {
-			margin-bottom: 0;
-		}
-
 		#rcp-stripe-fields,
 		#rcp_submit_wrap {
 			padding-left: 1.5rem;
@@ -1968,6 +1978,10 @@ raise content above fold */
 		.password-creation {
 			overflow:hidden;
 		}
+
+		
+
+		/* MP: Style Discount Code elements */
 
 		#discount-field {
 			padding:0;
@@ -1995,9 +2009,10 @@ raise content above fold */
 			margin: 0;
 		}
 		
+		/* END MP: Style Discount Code elements */
 
 
-
+			
 		.mpp-signup label {
 			display: none;
 		}
@@ -2010,7 +2025,9 @@ raise content above fold */
 			margin-left: 1em;
 		}
 
-		#rcp_submit {
+		/* 20150618-MP-START: Fixed element selectors for payment form buttons */
+
+		form[action*="indie"] #rcp_submit {
 			width: 100%;
 			font-weight: 700;
 			font-size: 3.6px;
@@ -2029,7 +2046,7 @@ raise content above fold */
 			background-image: linear-gradient(to bottom, #35F2F0, #0E9997);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#35F2F0, endColorstr=#0E9997);
 		}
 
-		#rcp_submit:active {
+		form[action*="indie"] #rcp_submit:active {
 			border:1px solid #0E9997;
 			color: #fefefe;
 			background-color: #27B4B2; background-image: -webkit-gradient(linear, left top, left bottom, from(#27B4B2), to(#0C8684));
@@ -2040,8 +2057,8 @@ raise content above fold */
 			background-image: linear-gradient(to bottom, #27B4B2, #0C8684);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#27B4B2, endColorstr=#0C8684);
 		}
 
-		.post-2980 #rcp_submit,
-		.post-2980 #rcp_submit:hover {
+		form[action*="teams"] #rcp_submit,
+		form[action*="teams"] #rcp_submit:hover {
 			width: 100%;
 			font-weight: 700;
 			font-size: 3.6px;
@@ -2060,7 +2077,7 @@ raise content above fold */
 			background-image: linear-gradient(to bottom, #FECC77, #FD8208);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FECC77, endColorstr=#FD8208);
 		}
 
-		.post-2980 #rcp_submit:active {
+		form[action*="teams"] #rcp_submit:active {
 			border:1px solid #E88D00;
 			color: #fefefe;
 			background-color: #FD8208; background-image: -webkit-gradient(linear, left top, left bottom, from(#FD8208), to(#E88D00));
@@ -2071,16 +2088,7 @@ raise content above fold */
 			background-image: linear-gradient(to bottom, #FD8208, #E88D00);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FD8208, endColorstr=#E88D00);
 		}
 
-		.post-2980 #rcp_submit:active {
-			border:1px solid #0E9997;
-			color: #fefefe;
-			background-color: #27B4B2; background-image: -webkit-gradient(linear, left top, left bottom, from(#27B4B2), to(#0C8684));
-			background-image: -webkit-linear-gradient(top, #27B4B2, #0C8684);
-			background-image: -moz-linear-gradient(top, #27B4B2, #0C8684);
-			background-image: -ms-linear-gradient(top, #27B4B2, #0C8684);
-			background-image: -o-linear-gradient(top, #27B4B2, #0C8684);
-			background-image: linear-gradient(to bottom, #27B4B2, #0C8684);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#27B4B2, endColorstr=#0C8684);
-		}
+		/* 20150618-MP-END: Fixed element selectors for payment form buttons */
 
 		.credit_card {
 			width: 40%;
@@ -2177,7 +2185,6 @@ raise content above fold */
 
 .entry-content ol,
 .entry-content ul {
-	margin-left: 24px;
 	margin-left: 2.4rem;
 }
 
@@ -2837,6 +2844,7 @@ Media Queries
 		max-width: 90%;
 	}
 
+
 }
 
 @media only screen and (max-width: 1000px) {
@@ -2910,6 +2918,20 @@ Media Queries
 		margin: 0;
 	}
 
+
+	/*20150618-MP-START: Adjust bundle layout for tablet screens */
+
+
+
+	div[id*="edd_download_"] {
+	  margin: 3px;
+	  width: 48% !important;
+	  min-height: 350px !important;
+	  min-height: 35.0rem !important;
+	}
+
+	/*20150618-MP-END: Adjust bundle layout for tablet */
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -2934,6 +2956,21 @@ Media Queries
 	#responsive-menu-icon {
 		display: block;
 	}
+
+	/*20150618-MP-START: Adjust bundle layout for tablet screens */
+
+
+	div[id*="edd_download_"] {
+	  margin: 3px;
+	  width: 100% !important;
+	  min-height: 350px !important;
+	  min-height: 35.0rem !important;
+
+	}
+
+	/*20150618-MP-END: Adjust bundle layout for tablet */
+
+
 
 }
 
@@ -3087,6 +3124,28 @@ Media Queries
 		#final-cta h1 {
 			margin: 0 7px;
 		}
+
+		/*20150618-MP-START: Adjust layout of bundles and guarantee img for narrow screens */ 
+
+		#bundles .edd_download {
+			max-width: 100%;
+			min-height: 0px;
+  			min-height: 0rem;
+  			min-height: 350px;
+		  	min-height: 35.0rem;
+		}
+
+		div[id*="edd_download_"] {
+	  		width: 100% !important;
+		}
+
+		#guarantee img {
+			display: block;
+  			margin: 0 auto;
+  			padding-top: 25px;
+		}
+
+		/*20150618-MP-END: Adjust layout of bundles for narrow screens */
 }
 
 /* ----------------------------------------------------------- */
@@ -3099,11 +3158,14 @@ Media Queries
 /*margin-top: 4em;*/
 clear: both;
 }
+/*MP: Remove margins to adjust form spacing with discount code */
 
 /*#rcp_registration_form fieldset {
   margin-top: 2em;
   margin-bottom: 2em;
 }*/
+
+/*MP: END */
 
 .card-expiry-month {
   display: inline;
@@ -3111,10 +3173,14 @@ clear: both;
   margin-left: 2em;
 }
 
+/*MP: Added to adjust size of discount code field */
+
 input#rcp_discount_code {
 	padding: 0.8rem;
 	padding: 8px;
 }
+
+/*MP: END */
 
 .card-expiry-year {
   display: inline;
